@@ -1,3 +1,18 @@
+<?php
+
+$servicos = [
+    ["imagem" => "imagens/site.jpg", "titulo" => "Criar um site", "descrição" => "Descrição do serviço 1"],
+
+    ["imagem" => "imagens/Loja_virtual.jpg", "titulo" => "Criar uma Loja Virtual", "descrição" => "Descrição do serviço 2"],
+
+    ["imagem" => "imagens/blog.png", "titulo" => "Criar um Blog", "descrição" => "Descrição do serviço 3"]
+
+];
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,36 +50,25 @@
             </section>
             <section id="servico" class="container mt-5 mb-5">
                 <div class="row">
+
+                <?php foreach ($servicos as $servico){ ?>
+
                     <div class="col-4">
                             <div class="card">
-                                    <img src="imagens/site.jpg" class="card-img-top" alt="site">
+                                    <img src= "<?php echo $servico["imagem"]; ?>" class="card-img-top" alt="site">
                                     <div class="card-body">
-                                      <h5 class="card-title">Sites</h5>
-                                      <p class="card-text">Crie seu site com a gente!</p>
+                                      <h5 class="card-title">
+                                          <?php echo $servico["titulo"]; ?>
+                                      </h5>
+                                      <p class="card-text">
+                                          <?php echo $servico["descrição"]; ?>
+                                      </p>
                                       <a href="#" class="btn btn-primary">Solicite um orçamento</a>
                                     </div>
                                   </div>
                     </div>
-                    <div class="col-4">
-                            <div class="card">
-                                    <img src="imagens/Loja_virtual.jpg" class="card-img-top" alt="lojavirtual">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Lojas Virtuais</h5>
-                                      <p class="card-text">Crie sua loja virtual com a gente!</p>
-                                      <a href="#" class="btn btn-primary">Solicite um orçamento</a>
-                                    </div>
-                                  </div>
-                    </div>
-                    <div class="col-4">
-                            <div class="card">
-                                    <img src="imagens/blog.png" class="card-img-top" alt="blog">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Blogs</h5>
-                                      <p class="card-text">Crie seu blog com a gente!</p>
-                                      <a href="#" class="btn btn-primary">Solicite um orçamento</a>
-                                    </div>
-                                  </div>
-                    </div>
+               <?php } ?>
+                   
                 </div>
                 <section id="sobre" class="container mt-5">
                     <div class="row">
